@@ -1,4 +1,4 @@
-import { PanelRightClose, PanelRightOpen, Search } from "lucide-react";
+import { PanelRightClose, PanelRightOpen, Search, House } from "lucide-react";
 import { useState } from "react";
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
             className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
           >
             {isOpen ? (
-              <PanelRightOpen className="w-5 h-5" />
+              <button title="collapse"><PanelRightOpen className="w-5 h-5 cursor-pointer" /></button>
             ) : (
-              <PanelRightClose className="w-5 h-5" />
+              <button title="expand"><PanelRightClose className="w-5 h-5 cursor-pointer" /></button>
             )}
           </button>
         </div>
@@ -46,8 +46,8 @@ function App() {
           `}
         >
           {!isOpen ? (
-            <button className="p-2 rounded-md hover:bg-gray-100 text-gray-600 transition-colors">
-              <Search className="w-5 h-5" />
+            <button title="search" className="p-2 rounded-md hover:bg-gray-100 text-gray-600 transition-colors">
+              <Search className="w-5 h-5 cursor-pointer" />
             </button>
           ) : (
             <div className="relative w-full max-w-[220px]">
@@ -59,6 +59,30 @@ function App() {
                  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all
                 "
               />
+            </div>
+          )}
+        </div>
+
+        {/* Dashboard */}
+        <div
+          className={`
+            flex items-center justify-center
+            px-4 py-4 transition-all duration-300
+          `}
+        >
+          {!isOpen ? (
+            <button title="dashboard" className="p-2 rounded-md hover:bg-gray-100 text-gray-600 transition-colors">
+              <House className="w-5 h-5 cursor-pointer" />
+            </button>
+          ) : (
+            <div className="flex items-center gap-3 w-full max-w-[220px]">
+              <div className="p-2">
+                <House className="w-5 h-5 cursor-pointer text-gray-600" />
+              </div>
+
+              <span className="text-gray-800 font-medium tracking-wide">
+                Dashboard
+              </span>
             </div>
           )}
         </div>
