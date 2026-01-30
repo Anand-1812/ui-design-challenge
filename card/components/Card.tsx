@@ -9,6 +9,7 @@ const Card = () => {
     )}>
       <h2 className="font-bold text-[20px]">Card Components</h2>
       <p className="text-neutral-400 mt-2 text-[15px]">A collection of beautiful UI components, let's get on with it.</p>
+      <div className="text-bold text-3xl">This is a new div</div>
     </div>
   )
 }
